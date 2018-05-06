@@ -155,7 +155,7 @@ Public Class Form1
                                         Dim href As String = item.ChildNodes(0).ChildNodes(0).Attributes("href").Value
 
                                         ' go to item
-                                        driver.Navigate.GoToUrl("http: //www.supremenewyork.com" + href)
+                                        driver.Navigate.GoToUrl("http://www.supremenewyork.com" + href)
                                         ATCThread.RunWorkerAsync()
                                         Exit Sub
                                     End If
@@ -348,9 +348,7 @@ Public Class Form1
     End Sub
     Private Sub StartBrowserThread_DoWork(ByVal sender As System.Object, ByVal e As DoWorkEventArgs) Handles StartBrowserThread.DoWork
         WriteLog("Пытаемся запустить браузер")
-        Invoke(Sub()
-                   driver = New FirefoxDriver()
-               End Sub)
+        driver = New FirefoxDriver()
         WriteLog("Браузер успешно запущен")
         Invoke(Sub()
                    Button1.Enabled = True
@@ -364,15 +362,27 @@ Public Class Form1
                End Sub)
     End Sub
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
-        StartBrowserThread.RunWorkerAsync()
+        If Not StartBrowserThread.IsBusy Then
+            StartBrowserThread.RunWorkerAsync()
+        Else
+            WriteLog("StartBrowserThread is busy")
+        End If
     End Sub
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
-        FillWithDelayThread.RunWorkerAsync()
+        If Not FillWithDelayThread.IsBusy Then
+            FillWithDelayThread.RunWorkerAsync()
+        Else
+            WriteLog("FillWithDelayThread is busy")
+        End If
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        FillThread.RunWorkerAsync()
+        If Not FillThread.IsBusy Then
+            FillThread.RunWorkerAsync()
+        Else
+            WriteLog("FillThread is busy")
+        End If
     End Sub
 
     Sub SendString(FieldBy As By, Str As String, OneChar As Boolean)
@@ -440,7 +450,11 @@ Public Class Form1
     End Sub
 
     Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
-        GoToUrlThread.RunWorkerAsync("http://google.com/")
+        If Not GoToUrlThread.IsBusy Then
+            GoToUrlThread.RunWorkerAsync("https://accounts.google.com/signin")
+        Else
+            WriteLog("GoToUrlThread is busy")
+        End If
     End Sub
 
     Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
@@ -494,15 +508,27 @@ Public Class Form1
         Return Reg
     End Function
     Private Sub Button8_Click(sender As Object, e As EventArgs) Handles Button8.Click
-        SearchThread.RunWorkerAsync()
+        If Not SearchThread.IsBusy Then
+            SearchThread.RunWorkerAsync()
+        Else
+            WriteLog("SearchThread is busy")
+        End If
     End Sub
 
     Private Sub Button7_Click(sender As Object, e As EventArgs) Handles Button7.Click
-        ATCThread.RunWorkerAsync()
+        If Not ATCThread.IsBusy Then
+            ATCThread.RunWorkerAsync()
+        Else
+            WriteLog("ATCThread is busy")
+        End If
     End Sub
 
     Private Sub Button6_Click(sender As Object, e As EventArgs) Handles Button6.Click
-        GoToUrlThread.RunWorkerAsync("https://www.supremenewyork.com/")
+        If Not GoToUrlThread.IsBusy Then
+            GoToUrlThread.RunWorkerAsync("https://www.supremenewyork.com/")
+        Else
+            WriteLog("GoToUrlThread is busy")
+        End If
     End Sub
 
     Public Sub WriteLog(str As String)

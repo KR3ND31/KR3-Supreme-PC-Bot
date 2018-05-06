@@ -5,6 +5,7 @@ Imports System.Windows.Forms
 
 Public Class settings
     Private Sub Form3_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
         TextBox1.Text = My.Settings.Name
         TextBox2.Text = My.Settings.Email
         MaskedTextBox1.Text = My.Settings.Tel
@@ -105,23 +106,32 @@ Public Class settings
         Form1.ItemsArray = {}
         For Each ItemTabPage As TabPage In ItemsTab.TabPages
             Dim ItemArray As Hashtable = New Hashtable()
-            ItemArray.Add("Category", ItemTabPage.Controls.OfType(Of ItemTab)().Last.CategoryInput.Text)
-            ItemArray.Add("Size", ItemTabPage.Controls.OfType(Of ItemTab)().Last.SizeInput.Text)
-            ItemArray.Add("Keyword", ItemTabPage.Controls.OfType(Of ItemTab)().Last.KeywordInput.Text)
-            ItemArray.Add("IfItemNoSize", ItemTabPage.Controls.OfType(Of ItemTab)().Last.IfItemNoSizeInput.Text)
-            ItemArray.Add("IfItemNoStyle", ItemTabPage.Controls.OfType(Of ItemTab)().Last.IfItemNoStyleInput.Text)
 
-            Dim ColorsArray As String() = {}
+            Dim Category As String = ItemTabPage.Controls.OfType(Of ItemTab)().Last.CategoryInput.Text
+            Dim Size As String = ItemTabPage.Controls.OfType(Of ItemTab)().Last.SizeInput.Text
+            Dim Keyword As String = ItemTabPage.Controls.OfType(Of ItemTab)().Last.KeywordInput.Text
+            Dim IfItemNoSize As String = ItemTabPage.Controls.OfType(Of ItemTab)().Last.IfItemNoSizeInput.Text
+            Dim IfItemNoStyle As String = ItemTabPage.Controls.OfType(Of ItemTab)().Last.IfItemNoStyleInput.Text
 
-            For Each ColorPanel As Panel In ItemTabPage.Controls.OfType(Of ItemTab)().Last.ColorsPanel.Controls
-                Array.Resize(ColorsArray, ColorsArray.Length + 1)
-                ColorsArray(ColorsArray.Length - 1) = ColorPanel.Controls.OfType(Of TextBox)().Last.Text
-            Next
+            If Category <> "" And Size <> "" And Keyword <> "" And IfItemNoSize <> "" And IfItemNoStyle <> "" Then
+                ItemArray.Add("Category", Category)
+                ItemArray.Add("Size", Size)
+                ItemArray.Add("Keyword", Keyword)
+                ItemArray.Add("IfItemNoSize", IfItemNoSize)
+                ItemArray.Add("IfItemNoStyle", IfItemNoStyle)
 
-            ItemArray.Add("Colors", ColorsArray)
+                Dim ColorsArray As String() = {}
 
-            Array.Resize(Form1.ItemsArray, Form1.ItemsArray.Length + 1)
-            Form1.ItemsArray(Form1.ItemsArray.Length - 1) = ItemArray
+                For Each ColorPanel As Panel In ItemTabPage.Controls.OfType(Of ItemTab)().Last.ColorsPanel.Controls
+                    Array.Resize(ColorsArray, ColorsArray.Length + 1)
+                    ColorsArray(ColorsArray.Length - 1) = ColorPanel.Controls.OfType(Of TextBox)().Last.Text
+                Next
+
+                ItemArray.Add("Colors", ColorsArray)
+
+                Array.Resize(Form1.ItemsArray, Form1.ItemsArray.Length + 1)
+                Form1.ItemsArray(Form1.ItemsArray.Length - 1) = ItemArray
+            End If
         Next
         Form1.UpdateQueue()
     End Sub

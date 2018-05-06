@@ -75,7 +75,7 @@ Partial Class ItemTab
         '
         Me.SizeInput.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.SizeInput.FormattingEnabled = True
-        Me.SizeInput.Items.AddRange(New Object() {"any", "Small", "Medium", "Large", "XLarge", "30", "32", "34", "36", "US 8", "US 8.5", "US 9", "US 9.5", "US 10", "US 10.5 (shoes)", "US 11 (shoes)", "US 11.5 (shoes)", "US 12 (shoes)", "US 12.5 (shoes)", "US 13 (shoes)"})
+        Me.SizeInput.Items.AddRange(New Object() {"any", "Small", "Medium", "Large", "XLarge", "30", "32", "34", "36", "US 8", "US 8.5", "US 9", "US 9.5", "US 10", "US 10.5", "US 11", "US 11.5", "US 12", "US 12.5", "US 13"})
         Me.SizeInput.Location = New System.Drawing.Point(91, 35)
         Me.SizeInput.Name = "SizeInput"
         Me.SizeInput.Size = New System.Drawing.Size(121, 21)

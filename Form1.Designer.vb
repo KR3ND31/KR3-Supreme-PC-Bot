@@ -5,7 +5,7 @@ Partial Class Form1
     Inherits System.Windows.Forms.Form
 
     'Форма переопределяет dispose для очистки списка компонентов.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -22,7 +22,7 @@ Partial Class Form1
     'Примечание: следующая процедура является обязательной для конструктора форм Windows Forms
     'Для ее изменения используйте конструктор форм Windows Form.  
     'Не изменяйте ее в редакторе исходного кода.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.B_options = New System.Windows.Forms.Button()
         Me.Button3 = New System.Windows.Forms.Button()
@@ -436,7 +436,6 @@ Partial Class Form1
     End Sub
 
     Friend WithEvents B_options As Button
-    Friend WithEvents WebView1 As EO.WebBrowser.WebView
     Friend WithEvents Button3 As Button
     Friend WithEvents Button2 As Button
     Friend WithEvents Button1 As Button

@@ -4,6 +4,14 @@ Imports System.Windows.Forms
 
 Public Class ItemTab
     Public ItemTab As TabPage
+    Dim AutoCompleteColors As AutoCompleteStringCollection = New AutoCompleteStringCollection
+    Dim ColorList As String() = {"black", "white", "red", "green", "orange", "burgundy", "brown", "blue", "tan", "charcoal", "yellow", "navy", "teal", "rose", "wine", "natural", "pink", "grey", "ash grey", "magenta", "heather grey", "rust", "stripe", "stewart", "khaki", "maroon", "olive", "indigo", "lime", "mustard", "brick", "mint", "purple", "plum", "gold", "royal", "pine", "pale yellow", "camo", "cheetah", "turquoise", "coral", "copper", "pine", "dusty", "denim", "light kelly", "dusty teal", "multi", "dark red", "light purple", "light blue", "dusty blue", "pale purple", "light pine", "dark aqua", "jigsaw camo", "light green", "light burgundy", "purple plaid", "light navy", "washed black", "slate", "checker", "silver"}
+    Private Sub ItemTab_Load(sender As Object, e As System.EventArgs) Handles MyBase.Load
+        AutoCompleteColors.AddRange(ColorList)
+        StyleInput.AutoCompleteSource = AutoCompleteSource.CustomSource
+        StyleInput.AutoCompleteCustomSource = AutoCompleteColors
+        StyleInput.AutoCompleteMode = AutoCompleteMode.Suggest
+    End Sub
     Private Sub Button1_Click(sender As Object, e As System.EventArgs) Handles AddButton.Click
         AddColor("")
     End Sub
@@ -17,7 +25,7 @@ Public Class ItemTab
         ColorsPanel.Height += lastColorPanelSize.Height + 3
 
         Dim ColorPanel As New Panel() With {.Size = New Size(149, 20), .Location = lastColorPanelLocation + New Point(0, lastColorPanelSize.Height + 3)}
-        Dim ColorInput As New TextBox() With {.Size = New Size(121, 20), .Text = color}
+        Dim ColorInput As New TextBox() With {.Size = New Size(121, 20), .Text = color, .AutoCompleteCustomSource = AutoCompleteColors, .AutoCompleteMode = AutoCompleteMode.Suggest, .AutoCompleteSource = AutoCompleteSource.CustomSource}
         Dim DeleteButton As New Button() With {.Size = New Size(20, 20), .Location = New Point(124, 0), .Text = "-"}
 
 
