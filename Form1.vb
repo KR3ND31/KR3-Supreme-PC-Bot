@@ -25,7 +25,6 @@ Public Class Form1
     Private WithEvents StartTimer As New Timer With {.Interval = 1000}
     Private timeLeft As Integer
 
-    'Dim FirefoxOptions As FirefoxOptions = New FirefoxOptions()
     Dim driver As IWebDriver
 
     Private WithEvents StartBrowserThread As BackgroundWorker = New BackgroundWorker()
@@ -347,9 +346,14 @@ Public Class Form1
         End If
     End Sub
     Private Sub StartBrowserThread_DoWork(ByVal sender As System.Object, ByVal e As DoWorkEventArgs) Handles StartBrowserThread.DoWork
-        WriteLog("Пытаемся запустить браузер")
-        driver = New FirefoxDriver()
-        WriteLog("Браузер успешно запущен")
+        WriteLog("Try to starting browser")
+
+        Dim DriverService = FirefoxDriverService.CreateDefaultService()
+        DriverService.HideCommandPromptWindow = True
+
+        driver = New FirefoxDriver(DriverService)
+
+        WriteLog("Browser running success")
         Invoke(Sub()
                    Button1.Enabled = True
                    Button3.Enabled = True

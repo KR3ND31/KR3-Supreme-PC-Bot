@@ -131,6 +131,8 @@ Public Class settings
 
                 Array.Resize(Form1.ItemsArray, Form1.ItemsArray.Length + 1)
                 Form1.ItemsArray(Form1.ItemsArray.Length - 1) = ItemArray
+            Else
+                MessageBox.Show("Select Category, Size, IfItemNoSize, IfItemNoStyle, and write keyword on " + (ItemsTab.TabPages.IndexOf(ItemTabPage) + 1).ToString + " item", "Error")
             End If
         Next
         Form1.UpdateQueue()
