@@ -58,6 +58,8 @@ Partial Class Form1
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.log_label = New System.Windows.Forms.Label()
         Me.LinkLabel1 = New System.Windows.Forms.LinkLabel()
+        Me.RadioButton1 = New System.Windows.Forms.RadioButton()
+        Me.RadioButton2 = New System.Windows.Forms.RadioButton()
         Me.GroupBox1.SuspendLayout()
         Me.GB_Queue.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
@@ -68,9 +70,9 @@ Partial Class Form1
         '
         'B_options
         '
-        Me.B_options.Location = New System.Drawing.Point(253, 383)
+        Me.B_options.Location = New System.Drawing.Point(12, 327)
         Me.B_options.Name = "B_options"
-        Me.B_options.Size = New System.Drawing.Size(75, 23)
+        Me.B_options.Size = New System.Drawing.Size(88, 23)
         Me.B_options.TabIndex = 0
         Me.B_options.Text = "Options"
         Me.B_options.UseVisualStyleBackColor = True
@@ -120,14 +122,14 @@ Partial Class Form1
         Me.GroupBox1.Controls.Add(Me.HScrollBar_GoToCheckOutDelay)
         Me.GroupBox1.Location = New System.Drawing.Point(213, 12)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(150, 365)
+        Me.GroupBox1.Size = New System.Drawing.Size(150, 338)
         Me.GroupBox1.TabIndex = 9
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Options"
         '
         'CaptchaToken_TextBox
         '
-        Me.CaptchaToken_TextBox.Location = New System.Drawing.Point(6, 339)
+        Me.CaptchaToken_TextBox.Location = New System.Drawing.Point(6, 311)
         Me.CaptchaToken_TextBox.Name = "CaptchaToken_TextBox"
         Me.CaptchaToken_TextBox.Size = New System.Drawing.Size(137, 20)
         Me.CaptchaToken_TextBox.TabIndex = 11
@@ -135,7 +137,7 @@ Partial Class Form1
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(34, 323)
+        Me.Label3.Location = New System.Drawing.Point(34, 295)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(81, 13)
         Me.Label3.TabIndex = 10
@@ -144,7 +146,7 @@ Partial Class Form1
         'HScrollBar_CheckOutDelay
         '
         Me.HScrollBar_CheckOutDelay.LargeChange = 100
-        Me.HScrollBar_CheckOutDelay.Location = New System.Drawing.Point(6, 276)
+        Me.HScrollBar_CheckOutDelay.Location = New System.Drawing.Point(6, 260)
         Me.HScrollBar_CheckOutDelay.Maximum = 10099
         Me.HScrollBar_CheckOutDelay.Minimum = 100
         Me.HScrollBar_CheckOutDelay.Name = "HScrollBar_CheckOutDelay"
@@ -156,7 +158,7 @@ Partial Class Form1
         'CheckOutDelay_Label
         '
         Me.CheckOutDelay_Label.AutoSize = True
-        Me.CheckOutDelay_Label.Location = New System.Drawing.Point(57, 253)
+        Me.CheckOutDelay_Label.Location = New System.Drawing.Point(57, 237)
         Me.CheckOutDelay_Label.Name = "CheckOutDelay_Label"
         Me.CheckOutDelay_Label.Size = New System.Drawing.Size(34, 13)
         Me.CheckOutDelay_Label.TabIndex = 8
@@ -165,7 +167,7 @@ Partial Class Form1
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(34, 233)
+        Me.Label4.Location = New System.Drawing.Point(34, 217)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(85, 13)
         Me.Label4.TabIndex = 7
@@ -174,7 +176,7 @@ Partial Class Form1
         'HScrollBar_SearchInterval
         '
         Me.HScrollBar_SearchInterval.LargeChange = 100
-        Me.HScrollBar_SearchInterval.Location = New System.Drawing.Point(6, 187)
+        Me.HScrollBar_SearchInterval.Location = New System.Drawing.Point(6, 178)
         Me.HScrollBar_SearchInterval.Maximum = 10099
         Me.HScrollBar_SearchInterval.Minimum = 100
         Me.HScrollBar_SearchInterval.Name = "HScrollBar_SearchInterval"
@@ -186,7 +188,7 @@ Partial Class Form1
         'SearchInterval_Label
         '
         Me.SearchInterval_Label.AutoSize = True
-        Me.SearchInterval_Label.Location = New System.Drawing.Point(57, 164)
+        Me.SearchInterval_Label.Location = New System.Drawing.Point(57, 155)
         Me.SearchInterval_Label.Name = "SearchInterval_Label"
         Me.SearchInterval_Label.Size = New System.Drawing.Size(34, 13)
         Me.SearchInterval_Label.TabIndex = 5
@@ -195,7 +197,7 @@ Partial Class Form1
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(34, 144)
+        Me.Label2.Location = New System.Drawing.Point(34, 135)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(79, 13)
         Me.Label2.TabIndex = 4
@@ -204,7 +206,7 @@ Partial Class Form1
         'AutoProcessPayment_CheckBox
         '
         Me.AutoProcessPayment_CheckBox.AutoSize = True
-        Me.AutoProcessPayment_CheckBox.Location = New System.Drawing.Point(10, 107)
+        Me.AutoProcessPayment_CheckBox.Location = New System.Drawing.Point(10, 98)
         Me.AutoProcessPayment_CheckBox.Name = "AutoProcessPayment_CheckBox"
         Me.AutoProcessPayment_CheckBox.RightToLeft = System.Windows.Forms.RightToLeft.Yes
         Me.AutoProcessPayment_CheckBox.Size = New System.Drawing.Size(133, 17)
@@ -215,7 +217,7 @@ Partial Class Form1
         'GoToCheckOutDelayValue_Label
         '
         Me.GoToCheckOutDelayValue_Label.AutoSize = True
-        Me.GoToCheckOutDelayValue_Label.Location = New System.Drawing.Point(57, 49)
+        Me.GoToCheckOutDelayValue_Label.Location = New System.Drawing.Point(57, 40)
         Me.GoToCheckOutDelayValue_Label.Name = "GoToCheckOutDelayValue_Label"
         Me.GoToCheckOutDelayValue_Label.Size = New System.Drawing.Size(34, 13)
         Me.GoToCheckOutDelayValue_Label.TabIndex = 2
@@ -224,7 +226,7 @@ Partial Class Form1
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(6, 25)
+        Me.Label1.Location = New System.Drawing.Point(6, 16)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(137, 13)
         Me.Label1.TabIndex = 1
@@ -233,7 +235,7 @@ Partial Class Form1
         'HScrollBar_GoToCheckOutDelay
         '
         Me.HScrollBar_GoToCheckOutDelay.LargeChange = 100
-        Me.HScrollBar_GoToCheckOutDelay.Location = New System.Drawing.Point(6, 72)
+        Me.HScrollBar_GoToCheckOutDelay.Location = New System.Drawing.Point(6, 63)
         Me.HScrollBar_GoToCheckOutDelay.Maximum = 10099
         Me.HScrollBar_GoToCheckOutDelay.Minimum = 100
         Me.HScrollBar_GoToCheckOutDelay.Name = "HScrollBar_GoToCheckOutDelay"
@@ -247,7 +249,7 @@ Partial Class Form1
         Me.GB_Queue.Controls.Add(Me.Panel_Queue)
         Me.GB_Queue.Location = New System.Drawing.Point(369, 12)
         Me.GB_Queue.Name = "GB_Queue"
-        Me.GB_Queue.Size = New System.Drawing.Size(207, 394)
+        Me.GB_Queue.Size = New System.Drawing.Size(207, 338)
         Me.GB_Queue.TabIndex = 10
         Me.GB_Queue.TabStop = False
         Me.GB_Queue.Text = "Queue"
@@ -258,18 +260,19 @@ Partial Class Form1
         Me.Panel_Queue.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel_Queue.Location = New System.Drawing.Point(3, 16)
         Me.Panel_Queue.Name = "Panel_Queue"
-        Me.Panel_Queue.Size = New System.Drawing.Size(201, 375)
+        Me.Panel_Queue.Size = New System.Drawing.Size(201, 319)
         Me.Panel_Queue.TabIndex = 0
         '
         'GroupBox2
         '
+        Me.GroupBox2.Controls.Add(Me.LinkLabel1)
         Me.GroupBox2.Controls.Add(Me.Button8)
         Me.GroupBox2.Controls.Add(Me.Button7)
         Me.GroupBox2.Controls.Add(Me.Button3)
         Me.GroupBox2.Controls.Add(Me.Button1)
         Me.GroupBox2.Location = New System.Drawing.Point(106, 191)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(101, 215)
+        Me.GroupBox2.Size = New System.Drawing.Size(101, 159)
         Me.GroupBox2.TabIndex = 11
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Manually"
@@ -296,6 +299,8 @@ Partial Class Form1
         '
         'GroupBox3
         '
+        Me.GroupBox3.Controls.Add(Me.RadioButton2)
+        Me.GroupBox3.Controls.Add(Me.RadioButton1)
         Me.GroupBox3.Controls.Add(Me.StopButton)
         Me.GroupBox3.Controls.Add(Me.Label5)
         Me.GroupBox3.Controls.Add(Me.TimePicker)
@@ -372,7 +377,7 @@ Partial Class Form1
         Me.GroupBox4.Controls.Add(Me.Panel1)
         Me.GroupBox4.Location = New System.Drawing.Point(582, 12)
         Me.GroupBox4.Name = "GroupBox4"
-        Me.GroupBox4.Size = New System.Drawing.Size(239, 394)
+        Me.GroupBox4.Size = New System.Drawing.Size(239, 338)
         Me.GroupBox4.TabIndex = 16
         Me.GroupBox4.TabStop = False
         Me.GroupBox4.Text = "Log"
@@ -384,7 +389,7 @@ Partial Class Form1
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel1.Location = New System.Drawing.Point(3, 16)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(233, 375)
+        Me.Panel1.Size = New System.Drawing.Size(233, 319)
         Me.Panel1.TabIndex = 0
         '
         'log_label
@@ -398,19 +403,43 @@ Partial Class Form1
         'LinkLabel1
         '
         Me.LinkLabel1.AutoSize = True
-        Me.LinkLabel1.Location = New System.Drawing.Point(719, 406)
+        Me.LinkLabel1.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
+        Me.LinkLabel1.Location = New System.Drawing.Point(6, 142)
         Me.LinkLabel1.Name = "LinkLabel1"
-        Me.LinkLabel1.Size = New System.Drawing.Size(102, 13)
+        Me.LinkLabel1.Size = New System.Drawing.Size(89, 12)
         Me.LinkLabel1.TabIndex = 17
         Me.LinkLabel1.TabStop = True
         Me.LinkLabel1.Text = "VK.COM/KR3ND31"
+        '
+        'RadioButton1
+        '
+        Me.RadioButton1.AutoSize = True
+        Me.RadioButton1.Checked = True
+        Me.RadioButton1.Enabled = False
+        Me.RadioButton1.Location = New System.Drawing.Point(6, 126)
+        Me.RadioButton1.Name = "RadioButton1"
+        Me.RadioButton1.Size = New System.Drawing.Size(60, 17)
+        Me.RadioButton1.TabIndex = 20
+        Me.RadioButton1.TabStop = True
+        Me.RadioButton1.Text = "Fast Fill"
+        Me.RadioButton1.UseVisualStyleBackColor = True
+        '
+        'RadioButton2
+        '
+        Me.RadioButton2.AutoSize = True
+        Me.RadioButton2.Enabled = False
+        Me.RadioButton2.Location = New System.Drawing.Point(6, 147)
+        Me.RadioButton2.Name = "RadioButton2"
+        Me.RadioButton2.Size = New System.Drawing.Size(63, 17)
+        Me.RadioButton2.TabIndex = 21
+        Me.RadioButton2.Text = "Slow Fill"
+        Me.RadioButton2.UseVisualStyleBackColor = True
         '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(833, 418)
-        Me.Controls.Add(Me.LinkLabel1)
+        Me.ClientSize = New System.Drawing.Size(833, 360)
         Me.Controls.Add(Me.GroupBox4)
         Me.Controls.Add(Me.Button6)
         Me.Controls.Add(Me.Button4)
@@ -429,13 +458,13 @@ Partial Class Form1
         Me.GroupBox1.PerformLayout()
         Me.GB_Queue.ResumeLayout(False)
         Me.GroupBox2.ResumeLayout(False)
+        Me.GroupBox2.PerformLayout()
         Me.GroupBox3.ResumeLayout(False)
         Me.GroupBox3.PerformLayout()
         Me.GroupBox4.ResumeLayout(False)
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
 
@@ -472,4 +501,6 @@ Partial Class Form1
     Friend WithEvents Label5 As Label
     Friend WithEvents StopButton As Button
     Friend WithEvents LinkLabel1 As LinkLabel
+    Friend WithEvents RadioButton2 As RadioButton
+    Friend WithEvents RadioButton1 As RadioButton
 End Class

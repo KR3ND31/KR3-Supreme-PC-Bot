@@ -20,6 +20,7 @@ Public Class Form1
     Public SearchInterval As Integer = 100
     Public CheckOutDelay As Integer = 100
     Public CaptchaToken As String
+    Public FastFill As Boolean = True
     Dim searching = False
     Private WithEvents SearchTimer As New Timer
     Private WithEvents StartTimer As New Timer With {.Interval = 1000}
@@ -218,7 +219,12 @@ Public Class Form1
             WriteLog("no more items, redirecting to checkout page")
             Threading.Thread.Sleep(HScrollBar_GoToCheckOutDelay.Value)
             driver.Navigate.GoToUrl("http://www.supremenewyork.com/checkout")
-            FillWithDelayThread.RunWorkerAsync()
+
+            If (FastFill) Then
+                FillThread.RunWorkerAsync()
+            Else
+                FillWithDelayThread.RunWorkerAsync()
+            End If
         End If
     End Sub
     Private Sub GoToUrlThread_DoWork(ByVal sender As System.Object, ByVal e As DoWorkEventArgs) Handles GoToUrlThread.DoWork
@@ -363,6 +369,8 @@ Public Class Form1
                    Button7.Enabled = True
                    Button8.Enabled = True
                    TimePicker.Enabled = True
+                   RadioButton1.Enabled = True
+                   RadioButton2.Enabled = True
                End Sub)
     End Sub
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
@@ -554,6 +562,18 @@ Public Class Form1
         Diagnostics.Process.Start("http://www.kr3nd31.ru")
         Diagnostics.Process.Start("http://vk.com/kr3nd31")
         Diagnostics.Process.Start("http://vk.com/kr3sb")
+    End Sub
+
+    Private Sub RadioButton1_CheckedChanged(sender As Object, e As EventArgs) Handles RadioButton1.CheckedChanged
+        FastFill = True
+    End Sub
+
+    Private Sub RadioButton2_CheckedChanged(sender As Object, e As EventArgs) Handles RadioButton2.CheckedChanged
+        FastFill = False
+    End Sub
+
+    Private Sub GroupBox1_Enter(sender As Object, e As EventArgs) Handles GroupBox1.Enter
+
     End Sub
 End Class
 
